@@ -1,5 +1,4 @@
 ﻿using Microsoft.Maui.Controls;
-using System;
 
 namespace InstaPet
 {
@@ -8,25 +7,20 @@ namespace InstaPet
         public MainPage()
         {
             InitializeComponent();
-
-            // Contenido de la página principal
-            var label = new Label
-            {
-                Text = "¡Hola, mundo!",
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center
-            };
-
-            Content = new Grid
-            {
-                Children = { label }
-            };
+            Title = Localization.Resources.Title;
         }
 
-        // Agrega el evento OnCounterClicked
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            // Lógica que se ejecutará cuando se haga clic en el evento
+
+            // Navigate to the login page or perform the desired action
+            // when the "¿Ya tienes una cuenta? Inicia sesión." button is clicked
         }
+        private void OnCreateAccountTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
+
+
     }
 }

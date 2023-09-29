@@ -59,5 +59,27 @@
 	<ItemGroup>
 	  <None Remove="Resources\174569-perro_aspirador_vef.gif" />
 	  <None Remove="Resources\Images\background.gif" />
+	  <None Remove="Resources\Images\karabackground.JPG" />
+	  <None Remove="Localization\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\karabackground.JPG" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Localization\Resources.es.resx">
+	    <Generator></Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Localization\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Localization\Resources.Designer.cs">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Localization\" />
 	</ItemGroup>
 </Project>

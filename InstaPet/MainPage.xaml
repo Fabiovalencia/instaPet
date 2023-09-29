@@ -1,42 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InstaPet.MainPage">
+             xmlns:res="clr-namespace:InstaPet.Localization"
+             x:Class="InstaPet.MainPage"
+             BackgroundColor="White"
+             Title="{x:Static res:Resources.Title}">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <!-- Usamos un Grid para organizar el Image y el StackLayout -->
+    <Grid>
+        <!-- Configuramos el fondo con un control Image -->
+        <Image Source="karabackground.JPG"
+               Aspect="AspectFill"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"/>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, Fabio!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+        <!-- Agregamos los elementos de contenido encima del fondo -->
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <!-- Establecemos un estilo personalizado para las cajas de entrada -->
+            <Entry Placeholder="{x:Static res:Resources.LoginUserLabel}" x:Name="UsernameEntry">
+                <Entry.FontSize>20</Entry.FontSize>
+                <!-- Puedes ajustar otros atributos de estilo aquí -->
+            </Entry>
+            <Entry Placeholder="{x:Static res:Resources.LoginPasswordLabel}" IsPassword="True" x:Name="PasswordEntry">
+                <Entry.FontSize>20</Entry.FontSize>
+                <!-- Puedes ajustar otros atributos de estilo aquí -->
+            </Entry>
+            <Button Text="{x:Static res:Resources.LoginButton}" Clicked="OnLoginButtonClicked" />
+            
+            <!-- Texto clickeable para crear una nueva cuenta -->
+            <Button Text="{x:Static res:Resources.RegisterButton}"
+                TextColor="Blue"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnCreateAccountTapped" />
+        </StackLayout>
+    </Grid>
 </ContentPage>
-

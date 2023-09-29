@@ -6,7 +6,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new LoginPage();
+		MainPage = new NavigationPage(new MainPage());
 	}
 }
 

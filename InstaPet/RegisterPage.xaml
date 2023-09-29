@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:res="clr-namespace:InstaPet.Localization"
+             x:Class="InstaPet.RegisterPage">
+
+    <!-- Set the background color on the root layout element -->
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Your registration page content goes here -->
+        <Label Text="{x:Static res:Resources.RegisterLabel}" FontSize="24"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Grid.Row="0"
+               Margin="0,80,0,0"/>
+
+        <Entry Placeholder="{x:Static res:Resources.RegisterUserNameLabel}" x:Name="UsernameEntry"
+               Grid.Row="1" Margin="20,100,20,0" BackgroundColor="#EFEFEF" FontSize="Default" WidthRequest="600"/>
+
+        <Entry Placeholder="{x:Static res:Resources.RegisterNameLabel}" x:Name="NameEntry"
+               Grid.Row="2" Margin="20,10,20,0" BackgroundColor="#EFEFEF" FontSize="Default" WidthRequest="600"/>
+
+        <Entry Placeholder="{x:Static res:Resources.RegisterEmailLabel}" x:Name="EmailEntry"
+               Grid.Row="3" Margin="20,10,20,0" BackgroundColor="#EFEFEF" FontSize="Default" WidthRequest="600"/>
+
+        <Entry Placeholder="{x:Static res:Resources.RegisterPasswordLabel}" IsPassword="True" x:Name="PasswordEntry"
+               Grid.Row="4" Margin="20,10,20,0" BackgroundColor="#EFEFEF" FontSize="Default" WidthRequest="600"/>
+
+        <Entry Placeholder="{x:Static res:Resources.RegisterConfirmPasswordLabel}" IsPassword="True" x:Name="ConfirmPasswordEntry"
+               Grid.Row="5" Margin="20,10,20,0" BackgroundColor="#EFEFEF" FontSize="Default" WidthRequest="600"/>
+
+        <!-- Registration button -->
+        <Button Text="{x:Static res:Resources.RegisterButton}" Clicked="OnRegisterButtonClicked"
+                Grid.Row="6" Margin="20,20,20,0" BackgroundColor="#007BFF" TextColor="White" FontSize="Default" WidthRequest="300"/>
+        
+        
+    </Grid>
+</ContentPage>
