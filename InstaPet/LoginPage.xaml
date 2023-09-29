@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InstaPet.LoginPage"
+             BackgroundColor="White"
+             Title="LoginPage">
+
+    <!-- Usamos un Grid para organizar el Image y el StackLayout -->
+    <Grid>
+        <!-- Configuramos el fondo con un control Image -->
+        <Image Source="background.gif"
+               Aspect="AspectFill"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"/>
+
+        <!-- Agregamos los elementos de contenido encima del fondo -->
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Entry Placeholder="Nombre de usuario" x:Name="UsernameEntry" />
+            <Entry Placeholder="Contraseña" IsPassword="True" x:Name="PasswordEntry" />
+            <Button Text="Iniciar Sesión" Clicked="OnLoginButtonClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
